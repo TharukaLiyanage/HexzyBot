@@ -26,10 +26,10 @@ from HexzyBot import (
 
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
-from HexzyBot.modules import ALL_MODULES
-from HexzyBot.modules.helper_funcs.chat_status import is_user_admin
-from HexzyBot.modules.helper_funcs.misc import paginate_modules
-from HexzyBot.modules.sudoers import bot_sys_stats
+from ELENA BOT.modules import ALL_MODULES
+from ELENA BOT.modules.helper_funcs.chat_status import is_user_admin
+from ELENA BOT.modules.helper_funcs.misc import paginate_modules
+from ELENA BOT.modules.sudoers import bot_sys_stats
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.error import (
     BadRequest,
@@ -76,24 +76,24 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = f"""
-Hello, \n I'M Hexzy 
-ɪ'ᴍ ʜᴇʀᴇ ᴛᴏ ʜᴇʟᴘ ʏᴏᴜ ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ[️️ ️](https://telegra.ph/file/9f06565978a17c20794c7.jpg)ɢʀᴏᴜᴘꜱ! ʜɪᴛ /help
-Maintained by @ImPrabhasha ❤
+Hello, \n I'M ELENA 
+ɪ'ᴍ ʜᴇʀᴇ ᴛᴏ ʜᴇʟᴘ ʏᴏᴜ ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ[️️ ️]https://telegra.ph/file/7e0ce49076c49e9768f07.jpg)ɢʀᴏᴜᴘꜱ! ʜɪᴛ /help
+Maintained by @tharukaliyanage ❤
 """
 
 buttons = [
     [
         InlineKeyboardButton(
-            text="➕️ ᴀᴅᴅ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕️", url="t.me/HexzyBot?startgroup=true"),
+            text="➕️ ᴀᴅᴅ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕️", url="t.me/TheTharuBot?startgroup=true"),
     ],
     [
-        InlineKeyboardButton(text="ᴀʙᴏᴜᴛ", callback_data="hexzy_"),
+        InlineKeyboardButton(text="ᴀʙᴏᴜᴛ", callback_data="elena_"),
         InlineKeyboardButton(
             text="ꜱᴜᴘᴘᴏʀᴛ", url=f"https://t.me/{SUPPORT_CHAT}"
         ),
     ],
     [
-        InlineKeyboardButton(text="ʟᴏɢꜱ", url=f"https://t.me/HexzyLogs"),
+        InlineKeyboardButton(text="ʟᴏɢꜱ", url=f"https://t.me/THARUElenaLogs"),
         InlineKeyboardButton(
             text="System Stats 💻", callback_data="stats_callback"
         ),
@@ -105,12 +105,12 @@ buttons = [
 
 
 HELP_STRINGS = """
-`Hi.. I'M` Hexzy    [️️ ️](https://telegra.ph/file/9f06565978a17c20794c7.jpg)
+`Hi.. I'M` ELENA    [️️ ️](https://telegra.ph/file/7e0ce49076c49e9768f07.jpg)
 `ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴꜱ ʙᴇʟᴏᴡ ᴛᴏ ɢᴇᴛ ᴅᴏᴄᴜᴍᴇɴᴛᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ꜱᴘᴇᴄɪꜰɪᴄ ᴍᴏᴅᴜʟᴇꜱ..`
-Powered by @HiTechRocket """
+Powered by @tharukaliyanage """
 
 DONATE_STRING = """Hey, glad to hear you want to donate!
- You can support the project Of [𝙋𝙧𝙖𝙗𝙝𝙖𝙨𝙝𝙖 •••](t.me/Prabha_sha) \
+ You can support the project Of [tharukaliyanage](t.me/tharukaliyanage) \
  Supporting isnt always financial! [HiTech Rocket](t.me/HiTechRocket) \
  Those who cannot provide monetary support are welcome to help us develop the bot at ."""
 
@@ -353,11 +353,11 @@ def help_button(update, context):
 
 
 @run_async
-def hexzy_about_callback(update, context):
+def elena_about_callback(update, context):
     query = update.callback_query
-    if query.data == "hexzy_":
+    if query.data == "elena_":
         query.message.edit_text(
-            text=""" ℹ️ I'm *Hexzy*, a powerful group management bot built to help you manage your group easily.
+            text=""" ℹ️ I'm *Elena*, a powerful group management bot built to help you manage your group easily.
                  \n❍ I can restrict users.
                  \n❍ I can greet users with customizable welcome messages and even set a group's rules.
                  \n❍ I have an advanced anti-flood system.
@@ -365,22 +365,21 @@ def hexzy_about_callback(update, context):
                  \n❍ I have a note keeping system, blacklists, and even predetermined replies on certain keywords.
                  \n❍ I check for admins' permissions before executing any command and more stuffs
                  \n\n_Layla's licensed under the GNU General Public License v3.0_
-                 \n❍ Awesome Secret @HiTechRocket
-                 \n❍ Support Group @HiTechRockets
-                 \n❍ Assistant @HexzyAsistant.
-                 \nHere is the [💾Repository](https://github.com/Prabhasha-p/HexzyBot).
-                 \n\nIf you have any question about Hexzy, let us know at .""",
+                 \n❍ Awesome Secret @TharuBots
+                 \n❍ Support Group @ElenaBotTharu
+                 \n❍ Assistant @tharukaliyanage.
+                 \n\nIf you have any question about ELENA, let us know at .""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Home🏘", callback_data="hexzy_back")
+                    InlineKeyboardButton(text="Home🏘", callback_data="elena_back")
                  ]
                 ]
             ),
         )
-    elif query.data == "hexzy_back":
+    elif query.data == "elena_back":
         query.message.edit_text(
                 PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(buttons),
@@ -400,7 +399,7 @@ def Source_about_callback(update, context):
     query = update.callback_query
     if query.data == "source_":
         query.message.edit_text(
-            text=""" Hi..🤗 I'm *Hexzy*
+            text=""" Hi..🤗 I'm *ELENA*
                  \nHere is the [Source Code](https://github.com/Prabhasha-p/HexzyBot) .""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
